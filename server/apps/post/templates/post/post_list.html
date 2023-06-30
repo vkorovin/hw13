@@ -1,12 +1,13 @@
 <ul>
+  <h1>Blog posts</h1>
     <!-- Iterate over object_list -->
-    {% for object in object_list %}
+    {% for post in post_list %}
     <!-- Display Objects -->
-    <li>{{ object.title }}</li>
-    <li>{{ object.body }}</li>
-    <li>{{ object.author }}</li>
-
-
+    <li> Title: {{ post.title }}</li>
+    <li> Body:  {{ post.body }}</li>
+    <li> Author:{{ post.author }}</li>
+    <li> Created:{{ post.created_at }}</li>
+    <li> Updated:{{ post.updated_at }}</li>
     <hr/>
     <!-- If object_list is empty  -->
     {% empty %}
