@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 
 from django.utils.text import slugify
 from .models import Post
