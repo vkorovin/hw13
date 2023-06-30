@@ -44,7 +44,7 @@ urlpatterns = [
 
     # It is a good practice to have explicit index view:
     #path('', index, name='index'),
-    path('', PostList.as_view()),
+    path('', PostList.as_view(),name='post_list'),
 ]
 
 if settings.DEBUG:  # pragma: no cover

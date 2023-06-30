@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from django.utils.text import slugify
 from .models import Post
@@ -35,6 +36,10 @@ class PostUpdate(UpdateView):
     fields = [ 'title','body' ]
     template_name = 'post/post_update.html'
 
+class PostDelete(DeleteView):
+    model = Post
+    template_name = 'post/post_confirm_delete.html'
+    success_url = reverse_lazy("post_list")
 
 def index(request: HttpRequest) -> HttpResponse:
     """
