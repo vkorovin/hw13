@@ -5,6 +5,7 @@ from django.shortcuts import render,redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView
 
 from django.utils.text import slugify
 from .models import Post
@@ -29,6 +30,10 @@ class PostCreate(CreateView):
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
+class PostUpdate(UpdateView):
+    model = Post
+    fields = [ 'title','body' ]
+    template_name = 'post/post_update.html'
 
 
 def index(request: HttpRequest) -> HttpResponse:
