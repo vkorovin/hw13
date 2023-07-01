@@ -1,5 +1,6 @@
 <h1>{{ object.title }}</h1>
  <p>Body: {{ object.body }}</p>
  <p>Created: {{ object.created_at }}</p>
- <p>Updated: {{ object.upated_at }}</p>
+ <p>Updated: {{ object.updated_at }}</p>
  <p>Author: {{ object.author }}</p>
+ <p> <a href="../../post/">List view</a> <a href="../../post/{{ object.slug }}/update">Update</a> <a href="../../post/{{ object.slug }}/delete">Delete</a></p>

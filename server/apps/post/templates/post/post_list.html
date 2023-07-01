@@ -1,13 +1,18 @@
 <ul>
+   <h1><a href="../../post/create"> New blog post</a> </h1>
+  <br>
+
   <h1>Blog posts</h1>
+
     <!-- Iterate over object_list -->
     {% for post in post_list %}
     <!-- Display Objects -->
     <li> Title: {{ post.title }}</li>
     <li> Body:  {{ post.body }}</li>
     <li> Author:{{ post.author }}</li>
-    <li> Created:{{ post.created_at }}</li>
-    <li> Updated:{{ post.updated_at }}</li>
+    <li> <a href="../../post/{{ post.slug }}/">DeatiledView</a>
+         <a href="../../post/{{ post.slug }}/update">Update</a>
+         <a href="../../post/{{ post.slug }}/delete">Delete</a>
     <hr/>
     <!-- If object_list is empty  -->
     {% empty %}
